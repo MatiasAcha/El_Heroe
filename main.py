@@ -46,12 +46,18 @@ def main():
     print("")
     guerrerito.atacar(maguito)
     print("")
+
+    
     
     if maguito.esta_vivo():
+        maguito.status()
+        print("")
         maguito.subir_nivel()
         print("")
 
     if guerrerito.esta_vivo():
+        guerrerito.status()
+        print("")
         guerrerito.subir_nivel()
         print("")
 
