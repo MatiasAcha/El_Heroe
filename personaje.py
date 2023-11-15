@@ -4,7 +4,7 @@ from colorama import init, Fore
 init(autoreset=True)
 
 class Personaje:
-    def __init__(self, clase, nombre, saludmax, manamax, fuerza, inteligencia, defensa_fisica, defensa_magica):
+    def __init__(self, nombre, clase, saludmax, manamax, fuerza, inteligencia, defensa_fisica, defensa_magica):
         self.__nombre = nombre
         self.__clase = clase
         self.__salud = saludmax
@@ -44,15 +44,15 @@ class Personaje:
             critico = random.randint(1, 10)
             danio = 0
             #Calcula el daño que hacemos segun nuestra clase
-            if self.__clase == "Guerrero":
-                danio += (self.__fuerza + self.aumento_de_fuerza) * 2 + variacion
+            if self.__clase =="Guerrero":
+                danio = ((self.get_fuerza() + self.aumento_de_fuerza) * 2 + variacion)
             else:
-                danio = self.__fuerza * 2 - enemigo.get_defensa_fisica() + variacion
+                danio = (self.get_fuerza() * 2 + variacion)
             #Calcula el daño que se reduce segun la clase del enemigo
             if enemigo.__clase == "Guerrero":
-                danio -= enemigo.get_defensa_fisica() + enemigo.aumento_de_def_fisica
+                danio = danio - enemigo.get_defensa_fisica() - enemigo.aumento_de_def_fisica
             else:
-                danio -= enemigo.get_defensa_fisica()
+                danio = danio - enemigo.get_defensa_fisica()
             #Verifica si se realiza un Critico. De ser asi el daño calculado pasa a ser el doble.
             if critico == 10:
                 danio = danio * 2

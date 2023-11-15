@@ -2,7 +2,7 @@ from personaje import Personaje
 from personaje import Fore, random
 
 class Mago(Personaje):
-    def __init__(self, clase="Mago", nombre="Elfus", saludmax=100, manamax=100, fuerza=2, inteligencia=8, defensa_fisica=2, defensa_magica=8):
+    def __init__(self, nombre="Elfus", clase="Mago", saludmax=100, manamax=100, fuerza=2, inteligencia=8, defensa_fisica=2, defensa_magica=8):
         super().__init__(nombre, clase, saludmax, manamax, fuerza, inteligencia, defensa_fisica, defensa_magica)
 
     def subir_nivel(self):
@@ -24,7 +24,7 @@ class Mago(Personaje):
 
         print(Fore.LIGHTGREEN_EX + f"Defensa Fisica: {self.get_defensa_fisica()} + 1 = {self.get_defensa_fisica()+1}")
         self.set_def_fisica(self.get_defensa_fisica() + 1)
-        
+
         print(Fore.LIGHTMAGENTA_EX + f"Defensa Magica: {self.get_defensa_magica()} + 3 = {self.get_defensa_magica()+3}")
         self.set_def_magica(self.get_defensa_magica() + 3)
 

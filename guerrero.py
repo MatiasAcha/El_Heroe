@@ -4,7 +4,7 @@ from personaje import Fore, random
 class Guerrero(Personaje):
     aumento_de_fuerza = 0
     aumento_de_def_fisica = 0
-    def __init__(self, clase="Guerrero", nombre="Guerreritox", saludmax=150, manamax=0, fuerza=8, inteligencia=0, defensa_fisica=5, defensa_magica=2):
+    def __init__(self, nombre="Guerreritox", clase="Guerrero", saludmax=150, manamax=0, fuerza=8, inteligencia=0, defensa_fisica=5, defensa_magica=2):
         super().__init__(nombre, clase, saludmax, manamax, fuerza, inteligencia, defensa_fisica, defensa_magica)
 
     def subir_nivel(self):
